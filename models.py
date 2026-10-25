@@ -50,19 +50,3 @@ class Order:
     def calculate_total(self) -> float:
         return sum((item.price for item in self.items), 0.0)
 
-
-if __name__ == "__main__":
-    menu = Menu(
-        [
-            FoodItem("Spicy Burger", 8.50, "Mains", 4.7),
-            FoodItem("Large Soda", 2.00, "Drinks", 4.2),
-            FoodItem("Chocolate Cake", 5.00, "Desserts", 4.9),
-        ]
-    )
-
-    print("Drinks:", [item.name for item in menu.filter_by_category("Drinks")])
-    print("Sorted by price:", [item.name for item in menu.sort_by_price()])
-    print("Most popular:", [item.name for item in menu.sort_by_popularity()])
-
-    order = Order([menu.items[0], menu.items[1]])
-    print(f"Order total: ${order.calculate_total():.2f}")
