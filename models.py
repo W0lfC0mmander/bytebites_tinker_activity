@@ -1,0 +1,1 @@
+# Defines Customer, FoodItem, Menu, and Order for the ByteBites ordering system.
